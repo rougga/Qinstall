@@ -10,7 +10,8 @@
     </head>
     <body>
         <h1>Creation des tables: (QData)</h1>
-        <%
+        <% 
+            
             boolean allCreated=true;
             String[] tables = {"agence","cible","lastupdate","t_biz_type","t_login_log","t_ticket","t_user","t_window","t_window_status"};
             try{
