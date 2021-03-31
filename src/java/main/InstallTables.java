@@ -41,7 +41,7 @@ public class InstallTables extends HttpServlet {
                 con.getStatement().executeUpdate(Tables.t_window);
                 con.getStatement().executeUpdate(Tables.t_window_status);
                 con.closeConnection();
-                response.sendRedirect("./index.jsp");
+                response.sendRedirect("./QData.jsp");
             } catch (Exception e) {
                 out.print(e.getMessage());
             }

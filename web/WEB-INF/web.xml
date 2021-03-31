@@ -4,9 +4,17 @@
         <servlet-name>InstallTables</servlet-name>
         <servlet-class>main.InstallTables</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>InstallTablesQStates</servlet-name>
+        <servlet-class>main.InstallTablesQStates</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InstallTables</servlet-name>
         <url-pattern>/InstallTables</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InstallTablesQStates</servlet-name>
+        <url-pattern>/InstallTablesQStates</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
