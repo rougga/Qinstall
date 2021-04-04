@@ -185,17 +185,17 @@ public class Tables {
             + "    current_ticket character varying(32) COLLATE pg_catalog.\"default\","
             + "db_id  character varying(40) not null references agence(id) ON DELETE CASCADE"
             + ");";
-    static String task="CREATE TABLE rougga_task"
+    static String task="CREATE TABLE rougga_task "
             + "("
-            + "id character varying(40) primary key"
-            + "name character varying(255) not null"
-            + "id_service character varying(32) references t_biz_type(id) ON DELETE CASCADE"
+            + "id character varying(40),"
+            + "name character varying(255) not null,"
+            + "id_service character varying(32) references t_biz_type(id) ON DELETE CASCADE,"
             + "CONSTRAINT task_pkey PRIMARY KEY (id)"
             + ");";
     static String ticket_task="CREATE TABLE rougga_ticket_task"
             + "("
-            + "id_ticket character varying(32) references t_ticket(id) ON DELETE CASCADE"
-            + "id_task  character varying(40) references rougga_task(id) ON DELETE CASCADE"
+            + "id_ticket character varying(32) references t_ticket(id) ON DELETE CASCADE,"
+            + "id_task  character varying(40) references rougga_task(id) ON DELETE CASCADE,"
             + "quantity numeric(5,0) default 1"
             + ");";
 }

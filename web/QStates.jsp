@@ -28,7 +28,7 @@
                         for(int i=0;i < tables.length;i++){
                            rs = md.getTables(null, null, prefix+tables[i], null);
                            if (rs.next()) {
-                %><%= "<h3 class='text-success'>"+rs.getString(3)+" créé.</h3>" %><%
+                %><%= "<h3 class='text-success'>"+tables[i]+" créé.</h3>" %><%
                            }else{
                             allCreated=false;
                 %><%= "<h3 class='text-danger'>"+tables[i]+" indisponible</h3>" %><%

@@ -2,9 +2,6 @@ package main;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.util.Objects;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
