@@ -25,8 +25,7 @@ public class InstallTables extends HttpServlet {
                     if (Objects.equals(rs.getString(4), "TABLE")) {
                         out.print(rs.getString(4) + " - " + rs.getString(3));
                         con.getStatement().executeUpdate("drop table if exists " + rs.getString(3) + " CASCADE;");
-
-                        System.err.println("Table: " + rs.getString(3) + " IS DELETED");
+                        System.out.println("Table: " + rs.getString(3) + " IS DELETED");
                     }
 
                 }
@@ -40,10 +39,14 @@ public class InstallTables extends HttpServlet {
                 con.getStatement().executeUpdate(Tables.t_user);
                 con.getStatement().executeUpdate(Tables.t_window);
                 con.getStatement().executeUpdate(Tables.t_window_status);
+                con.getStatement().executeUpdate(Tables.task_central);
+                con.getStatement().executeUpdate(Tables.ticket_task_cental);
                 con.closeConnection();
                 response.sendRedirect("./QData.jsp");
             } catch (Exception e) {
+                System.out.println(e.getMessage());
                 out.print(e.getMessage());
+                
             }
 
         }

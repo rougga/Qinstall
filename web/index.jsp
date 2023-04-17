@@ -1,3 +1,4 @@
+<%@page import="main.CfgHandler"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.DatabaseMetaData"%>
 <%@page import="main.PgConnection"%>
@@ -15,16 +16,16 @@
     </head>
     <body class="bg-dark">
         <div class="container pt-4">
-            <h1 class="text-white text-center">INSTALLATION :</h1>
+            <h1 class="text-white text-center">INSTALLATION </h1>
             <!<!-- les cartes -->
-            <div class="mt-4 row">  
+            <div class="mt-5 row">  
                 <!-- carte QStates -->
                 <div class="card col-12 col-md-5 mx-auto my-2" >
                     <img src="img/qstates.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Installer QStates</h5>
                         <p class="card-text">
-                            <strong>Version x.x.x</strong>
+                            <strong>Version  <%= CfgHandler.QSTATE_VERSION%></strong>
                             <br>
                             Installation des tables pour les fonctions des taches.
                         </p>
@@ -37,7 +38,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Installer QData</h5>
                         <p class="card-text">
-                            <strong>Version x.x.x</strong>
+                            <strong>Version <%= CfgHandler.QDATA_VERSION%></strong>
                             <br>
                             Suppression et l'installation des tables pour l'application.
                         </p>
@@ -46,7 +47,11 @@
                 </div>
 
             </div>
-
+            <footer>
+                <a target="_blank" href="https://www.marocnst.ma/">CopyRight &COPY; 2020 <%= CfgHandler.CLIENT %></a>
+                <p><%= CfgHandler.APP + " v" + CfgHandler.VERSION%></p>
+            </footer>
+        </div>
 
 
     </body>

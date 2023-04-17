@@ -198,4 +198,19 @@ public class Tables {
             + "id_task  character varying(40) references rougga_task(id) ON DELETE CASCADE,"
             + "quantity numeric(5,0) default 1"
             + ");";
+    static String task_central="CREATE TABLE rougga_task "
+            + "("
+            + "id character varying(40),"
+            + "name character varying(255) not null,"
+            + "id_service character varying(32) references t_biz_type(id) ON DELETE CASCADE,"
+            + "db_id character varying(40) not null references agence(id) ON DELETE CASCADE,"
+            + "CONSTRAINT task_central_pkey PRIMARY KEY (id)"
+            + ");";
+    static String ticket_task_cental="CREATE TABLE rougga_ticket_task"
+            + "("
+            + "id_ticket character varying(32) references t_ticket(id) ON DELETE CASCADE,"
+            + "id_task  character varying(40) references rougga_task(id) ON DELETE CASCADE,"
+            + "quantity numeric(5,0) default 1,"
+            + "db_id character varying(40) not null references agence(id) ON DELETE CASCADE"
+            + ");";
 }
