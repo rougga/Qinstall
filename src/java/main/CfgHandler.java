@@ -9,6 +9,6 @@ public class CfgHandler {
     public static final String CLIENT = "Maroc-NST";
     public static final int APP_PORT=8989;
     public static final String QSTATE_VERSION = "0.5.2";
-    public static final String QDATA_VERSION = "0.4";
+    public static final String QDATA_VERSION = "0.4.0";
 
 }
