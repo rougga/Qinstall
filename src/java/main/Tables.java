@@ -213,4 +213,19 @@ public class Tables {
             + "quantity numeric(5,0) default 1,"
             + "db_id character varying(40) not null references agence(id) ON DELETE CASCADE"
             + ");";
+    static String rougga_zone = "CREATE TABLE public.rougga_zone "
+            + "("
+            + "    id character varying(40) COLLATE pg_catalog.\"default\" NOT NULL,"
+            + "    name character varying(40) COLLATE pg_catalog.\"default\" NOT NULL,"
+            + "    city character varying(40) ,"
+            + "    code character varying(40) ,"
+            + "    CONSTRAINT zone_pkey PRIMARY KEY (id)"
+            + ")"
+            + ";";
+     static String rougga_agence_zone="CREATE TABLE rougga_agence_zone"
+            + "("
+            + "id_agence character varying(40) not null references agence(id) ON DELETE CASCADE,"
+            + "id_zone  character varying(40) not null references rougga_zone(id) ON DELETE CASCADE "
+            + ");";
+    
 }

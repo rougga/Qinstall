@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class InstallTables extends HttpServlet {
+public class InstallTablesQDisplay extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -41,8 +41,6 @@ public class InstallTables extends HttpServlet {
                 con.getStatement().executeUpdate(Tables.t_window_status);
                 con.getStatement().executeUpdate(Tables.task_central);
                 con.getStatement().executeUpdate(Tables.ticket_task_cental);
-                con.getStatement().executeUpdate(Tables.rougga_zone);
-                con.getStatement().executeUpdate(Tables.rougga_agence_zone);
                 con.closeConnection();
                 response.sendRedirect("./QData.jsp");
             } catch (Exception e) {

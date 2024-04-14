@@ -20,7 +20,7 @@
                 <% 
             
                     boolean allCreated=true;
-                    String[] tables = {"agence","cible","lastupdate","t_biz_type","t_login_log","t_ticket","t_user","t_window","t_window_status","rougga_task","rougga_ticket_task","rougga_zone","rougga_agence_zone"};
+                    String[] tables = {"agence","cible","lastupdate","t_biz_type","t_login_log","t_ticket","t_user","t_window","t_window_status","rougga_task","rougga_ticket_task"};
                     try{
                         PgConnection con = new PgConnection();
                         DatabaseMetaData md = con.getStatement().getConnection().getMetaData();

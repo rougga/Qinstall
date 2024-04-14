@@ -17,6 +17,7 @@
     <body class="bg-dark">
         <div class="container pt-4">
             <h1 class="text-white text-center">INSTALLATION </h1>
+            <h3 class="text-white text-center"><%= CfgHandler.APP + " v" + CfgHandler.VERSION%></h3>
             <!<!-- les cartes -->
             <div class="mt-5 row">  
                 <!-- carte QStates -->
@@ -45,10 +46,22 @@
                         <a href="QData.jsp" class="btn btn-success w-100 font-weight-bold" style="background-color: #14b6fa;"><img src="img/icon/install-16-white.png" alt="..."> INSTALLER</a>
                     </div>
                 </div>
-
+                <!-- carte QDisplay -->
+                <div class="card col-12 col-md-5 mx-auto my-2" >
+                    <img src="img/qdisplay.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Installer QDisplay</h5>
+                        <p class="card-text">
+                            <strong>Version <%= CfgHandler.QDISPLAY_VERSION %></strong>
+                            <br>
+                            Suppression et l'installation des tables pour l'application.
+                        </p>
+                        <a href="QDisplay.jsp" class="btn btn-dark w-100 font-weight-bold disabled" style="background-color: #000000;"><img src="img/icon/install-16-white.png" alt="..."> INSTALLER</a>
+                    </div>
+                </div>w
             </div>
             <footer>
-                <a target="_blank" href="https://www.marocnst.ma/">CopyRight &COPY; 2020 <%= CfgHandler.CLIENT %></a>
+                <a target="_blank" href="https://www.marocnst.ma/">CopyRight &COPY; 2020 <%= CfgHandler.CLIENT%></a>
                 <p><%= CfgHandler.APP + " v" + CfgHandler.VERSION%></p>
             </footer>
         </div>
