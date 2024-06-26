@@ -4,8 +4,8 @@ public class Tables {
 
     static String agence = "CREATE TABLE public.agence "
             + "("
-            + "    id character varying(40) COLLATE pg_catalog.\"default\" NOT NULL,"
-            + "    name character varying(255) COLLATE pg_catalog.\"default\" NOT NULL,"
+            + "    id character varying(40)  NOT NULL,"
+            + "    name character varying(255) NOT NULL,"
             + "    host character varying(17) DEFAULT '127.0.0.1',"
             + "    port int not null default 5432,"
             + "	database character varying(32) DEFAULT 'postgres' not null,"
@@ -189,15 +189,13 @@ public class Tables {
             + "("
             + "id character varying(40),"
             + "name character varying(255) not null,"
-            + "id_service character varying(32),"
-            + "db_id character varying(40) not null references agence(id) ON DELETE CASCADE"
+            + "id_service character varying(32)"
             + ");";
     static String ticket_task="CREATE TABLE rougga_ticket_task"
             + "("
             + "id_ticket character varying(32) ,"
             + "id_task  character varying(40) ,"
-            + "quantity numeric(5,0) default 1,"
-            + "db_id character varying(40) not null references agence(id) ON DELETE CASCADE"
+            + "quantity numeric(5,0) default 1"
             + ");";
     static String task_central="CREATE TABLE rougga_task "
             + "("
