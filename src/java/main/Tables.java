@@ -15,6 +15,20 @@ public class Tables {
             + "    CONSTRAINT agence_pkey PRIMARY KEY (id)"
             + ")"
             + ";";
+    
+    static String rougga_user= "CREATE TABLE public.rougga_user "
+            + "("
+            + "    id character varying(40)  NOT NULL,"
+            + "    username character varying(255) NOT NULL,"
+            + "    password character varying(255) not null ,"
+            + "    grade character varying(17) not null ,"
+            + "    first_name character varying(32) ,"
+            + "    last_name character varying(32) ,"
+            + "    date timestamp(6) without time zone,"
+            + "    sponsor character varying(255),"
+            + "    CONSTRAINT rougga_user_pkey PRIMARY KEY (id)"
+            + ")"
+            + ";";
     static String cible = "create table cible("
             + "	biz_type_id character varying(32) not null,"
             + "	db_id character varying(40) not null references agence(id) ON DELETE CASCADE,"
@@ -226,4 +240,9 @@ public class Tables {
             + "id_zone  character varying(40) not null references rougga_zone(id) ON DELETE CASCADE "
             + ");";
     
+    static String rougga_user_zone ="CREATE TABLE rougga_user_zone"
+            + "("
+            + "id_user character varying(40) not null references rougga_user(id) ON DELETE CASCADE,"
+            + "id_zone  character varying(40) not null references rougga_zone(id) ON DELETE CASCADE "
+            + ");";
 }

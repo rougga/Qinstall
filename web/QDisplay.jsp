@@ -7,7 +7,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Installation QData</title>
-        <link rel="icon" type="image/png" href="./img/favicon-32x32.png">
+        <link rel="icon" type="image/png" href="./img/favicon.ico">
         <script src="./js/lib/jquery.js"></script>
         <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="./js/lib/bootstrap.bundle.min.js"></script>

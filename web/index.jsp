@@ -8,7 +8,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>QInstall</title>
-        <link rel="icon" type="image/png" href="./img/favicon-32x32.png">
+        <link rel="icon" type="image/png" href="./img/favicon.ico">
         <script src="./js/lib/jquery.js"></script>
         <link href="./css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
         <script src="./js/lib/bootstrap.bundle.min.js"></script>
@@ -21,7 +21,7 @@
             <!<!-- les cartes -->
             <div class="mt-5 row">  
                 <!-- carte QStates -->
-                <div class="card col-12 col-md-5 mx-auto my-2" >
+                <div class="card col-12 col-md-3 mx-1" >
                     <img src="img/qstates.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Installer QStates</h5>
@@ -34,7 +34,7 @@
                     </div>
                 </div>
                 <!-- carte QData -->
-                <div class="card col-12 col-md-5 mx-auto my-2" >
+                <div class="card col-12 col-md-3 mx-1" >
                     <img src="img/qdata.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Installer QData</h5>
@@ -47,8 +47,8 @@
                     </div>
                 </div>
                 <!-- carte QDisplay -->
-                <div class="card col-12 col-md-5 mx-auto my-2" >
-                    <img src="img/qdisplay.png" class="card-img-top" alt="...">
+                <div class="card col-12 col-md-3 mx-1" >
+                    <img src="img/qdd.png" class="card-img-top" alt="...">
                     <div class="card-body">
                         <h5 class="card-title">Installer QDisplay</h5>
                         <p class="card-text">
@@ -56,9 +56,9 @@
                             <br>
                             Suppression et l'installation des tables pour l'application.
                         </p>
-                        <a href="QDisplay.jsp" class="btn btn-dark w-100 font-weight-bold disabled" style="background-color: #000000;"><img src="img/icon/install-16-white.png" alt="..."> INSTALLER</a>
+                        <a href="QDisplay.jsp" class="btn btn-dark w-100 font-weight-bold disabled" style="background-color: blue;"><img src="img/icon/install-16-white.png" alt="..."> INSTALLER</a>
                     </div>
-                </div>w
+                </div>
             </div>
             <footer>
                 <a target="_blank" href="https://www.marocnst.ma/">CopyRight &COPY; 2020 <%= CfgHandler.CLIENT%></a>
