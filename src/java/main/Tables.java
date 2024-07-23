@@ -15,20 +15,26 @@ public class Tables {
             + "    CONSTRAINT agence_pkey PRIMARY KEY (id)"
             + ")"
             + ";";
-    
-    static String rougga_user= "CREATE TABLE public.rougga_user "
+
+    static String rougga_user = "CREATE TABLE public.rougga_user "
             + "("
             + "    id character varying(40)  NOT NULL,"
-            + "    username character varying(255) NOT NULL,"
+            + "    username character varying(255) NOT NULL unique,"
             + "    password character varying(255) not null ,"
             + "    grade character varying(17) not null ,"
             + "    first_name character varying(32) ,"
             + "    last_name character varying(32) ,"
-            + "    date timestamp(6) without time zone,"
+            + "    date timestamp(6) without time zone DEFAULT now(),"
             + "    sponsor character varying(255),"
             + "    CONSTRAINT rougga_user_pkey PRIMARY KEY (id)"
             + ")"
-            + ";";
+            + ";"
+            + "insert into rougga_user (id,username,password,grade,first_name,last_name)"
+            + " values('f2c1cf31-f2dd-46ca-9b92-9d60c45e1227',"
+            + "'admin',"
+            + "'$31$16$3HyoGMKLc4EvcO0ljwLKNY8pclDUAmd7o_oAQUA7J20',"
+            + "'adm','admin','admin');";
+    
     static String cible = "create table cible("
             + "	biz_type_id character varying(32) not null,"
             + "	db_id character varying(40) not null references agence(id) ON DELETE CASCADE,"
@@ -199,26 +205,26 @@ public class Tables {
             + "    current_ticket character varying(32) COLLATE pg_catalog.\"default\","
             + "db_id  character varying(40) not null references agence(id) ON DELETE CASCADE"
             + ");";
-    static String task="CREATE TABLE rougga_task "
+    static String task = "CREATE TABLE rougga_task "
             + "("
             + "id character varying(40),"
             + "name character varying(255) not null,"
             + "id_service character varying(32)"
             + ");";
-    static String ticket_task="CREATE TABLE rougga_ticket_task"
+    static String ticket_task = "CREATE TABLE rougga_ticket_task"
             + "("
             + "id_ticket character varying(32) ,"
             + "id_task  character varying(40) ,"
             + "quantity numeric(5,0) default 1"
             + ");";
-    static String task_central="CREATE TABLE rougga_task "
+    static String task_central = "CREATE TABLE rougga_task "
             + "("
             + "id character varying(40),"
             + "name character varying(255) not null,"
             + "id_service character varying(32) ,"
             + "db_id character varying(40) not null references agence(id) ON DELETE CASCADE"
             + ");";
-    static String ticket_task_cental="CREATE TABLE rougga_ticket_task"
+    static String ticket_task_cental = "CREATE TABLE rougga_ticket_task"
             + "("
             + "id_ticket character varying(32) ,"
             + "id_task  character varying(40) ,"
@@ -234,13 +240,13 @@ public class Tables {
             + "    CONSTRAINT zone_pkey PRIMARY KEY (id)"
             + ")"
             + ";";
-     static String rougga_agence_zone="CREATE TABLE rougga_agence_zone"
+    static String rougga_agence_zone = "CREATE TABLE rougga_agence_zone"
             + "("
             + "id_agence character varying(40) not null references agence(id) ON DELETE CASCADE,"
             + "id_zone  character varying(40) not null references rougga_zone(id) ON DELETE CASCADE "
             + ");";
-    
-    static String rougga_user_zone ="CREATE TABLE rougga_user_zone"
+
+    static String rougga_user_zone = "CREATE TABLE rougga_user_zone"
             + "("
             + "id_user character varying(40) not null references rougga_user(id) ON DELETE CASCADE,"
             + "id_zone  character varying(40) not null references rougga_zone(id) ON DELETE CASCADE "
