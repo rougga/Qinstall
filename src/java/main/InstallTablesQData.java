@@ -45,6 +45,7 @@ public class InstallTablesQData extends HttpServlet {
                 con.getStatement().executeUpdate(Tables.rougga_zone);
                 con.getStatement().executeUpdate(Tables.rougga_agence_zone);
                 con.getStatement().executeUpdate(Tables.rougga_user_zone);
+                con.getStatement().executeUpdate(Tables.ROUGGA_GBL_TABLE);
                 con.closeConnection();
                 response.sendRedirect("./QData.jsp");
             } catch (Exception e) {

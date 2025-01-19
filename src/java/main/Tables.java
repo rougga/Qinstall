@@ -34,7 +34,7 @@ public class Tables {
             + "'admin',"
             + "'$31$16$3HyoGMKLc4EvcO0ljwLKNY8pclDUAmd7o_oAQUA7J20',"
             + "'adm','admin','admin');";
-    
+
     static String cible = "create table cible("
             + "	biz_type_id character varying(32) not null,"
             + "	db_id character varying(40) not null references agence(id) ON DELETE CASCADE,"
@@ -251,4 +251,28 @@ public class Tables {
             + "id_user character varying(40) not null references rougga_user(id) ON DELETE CASCADE,"
             + "id_zone  character varying(40) not null references rougga_zone(id) ON DELETE CASCADE "
             + ");";
+
+    public static final String ROUGGA_GBL_TABLE
+            = "CREATE TABLE rougga_gbl_table ("
+            + "id VARCHAR(255) PRIMARY KEY, "
+            + "id_service VARCHAR(255) NOT NULL, "
+            + "service_name VARCHAR(255) NOT NULL, "
+            + "nb_t BIGINT DEFAULT 0, "
+            + "nb_tt BIGINT DEFAULT 0, "
+            + "nb_a BIGINT DEFAULT 0, "
+            + "nb_tl1 BIGINT DEFAULT 0, "
+            + "nb_sa BIGINT DEFAULT 0, "
+            + "perApT DECIMAL(6, 3) DEFAULT 00.00, "
+            + "PERTL1pt DECIMAL(6, 3) DEFAULT 00.00, "
+            + "perSApT DECIMAL(6, 3) DEFAULT 00.00, "
+            + "avgSec_A NUMERIC DEFAULT 0, "
+            + "nb_ca BIGINT DEFAULT 0, "
+            + "percapt DECIMAL(6, 3) DEFAULT 00.00, "
+            + "avgSec_T NUMERIC DEFAULT 0, "
+            + "nb_ct BIGINT DEFAULT 0, "
+            + "perctpt DECIMAL(6, 3) DEFAULT 00.00, "
+            + "date TIMESTAMP DEFAULT NOW(), "
+            + "id_agence VARCHAR(40) REFERENCES agence(id) ON DELETE CASCADE NOT NULL"
+            + ");";
+
 }
