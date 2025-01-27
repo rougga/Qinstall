@@ -32,10 +32,13 @@ public class FileController {
             //simple json
             JSONParser parser = new JSONParser();
             JSONObject ob = (JSONObject) parser.parse(response2.toString());
-            return "";
-        } catch (FileNotFoundException ex) {
-            Logger.getLogger(FileController.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IOException | ParseException ex) {
+            String qdatav = (String) ob.get("qdata");
+            if (qdatav == null) {
+                return "0.0";
+            } else {
+                return qdatav;
+            }
+        } catch (Exception ex) {
             Logger.getLogger(FileController.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             try {
@@ -44,7 +47,7 @@ public class FileController {
                 Logger.getLogger(FileController.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return null;
+        return "O.O";
     }
 
     public static boolean uploadLastestQdata() {

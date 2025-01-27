@@ -5,18 +5,22 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
     String[] tables = {
-        "rougga_pars",
         "rougga_agences",
-        "rougga_cibles",
-        "rougga_tasks",
-        "rougga_ticket_task",
+        "rougga_users",
         "rougga_zones",
         "rougga_agence_zone",
-        "rougga_users",
         "rougga_user_zone",
-        "rougga_gbl_table"
+        "rougga_pars",
+        "rougga_titles",
+        "rougga_gbl_table",
+        "rougga_emp_table",
+        "rougga_empser_table",
+        "rougga_gch_table",
+        "rougga_gchser_table",
+        "rougga_gla_table",
+        "rougga_glt_table"          
     };
-    boolean allCreated = true;
+    int allCreated = 1;
 %>
 <!DOCTYPE html>
 <html>
@@ -69,7 +73,7 @@
                     </span>
                     <%
                     } else {
-                        allCreated = false;
+                        allCreated = 0;
                     %>
 
                     <span class="d-flex justify-content-between align-items-center w-50 mx-auto">
@@ -85,6 +89,7 @@
                     <%
                         con.closeConnection();
                     } catch (Exception e) {
+                        allCreated = -1;
                     %>
                     <div class='alert alert-danger alert-dismissible fade show' role='alert'>
                         <b><%= e.getMessage()%></b>
@@ -115,7 +120,7 @@
 
             <div class="row justify-content-center" >
                 <%
-                    if (!allCreated) {
+                    if (allCreated==0) {
                 %>
                 
                 <a href="./InstallTablesQData" class="btn btn-success">
@@ -123,7 +128,8 @@
                     INSTALLER
                 </a>
                 <%
-                } else {
+                } 
+                    if(allCreated==1) {
                 %>
                 <h2>
                     <img src="img/icon/check-mark-8-24.png"/> 

@@ -21,7 +21,7 @@
                 <a href="https://rougga.sder.ma" target="_blank" class="d-flex justify-content-center">
                     <img src="./img/rougga.png" class="img-fluid" width="100"/>
                 </a>
-                <h1 class="text-white text-center">INSTALLATION</h1>
+                <h1 class="text-white text-center">OUTIL D'INSTALLATION</h1>
             </div>
             <!<!-- les cartes -->
             <div class="row justify-content-center">  

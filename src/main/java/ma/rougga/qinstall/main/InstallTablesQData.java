@@ -30,22 +30,14 @@ public class InstallTablesQData extends HttpServlet {
 
                 }
 
-                con.getStatement().executeUpdate(Tables.agence);
-                con.getStatement().executeUpdate(Tables.rougga_user);
-                con.getStatement().executeUpdate(Tables.cible);
-                con.getStatement().executeUpdate(Tables.lastupdate);
-                con.getStatement().executeUpdate(Tables.t_biz_type);
-                con.getStatement().executeUpdate(Tables.t_login_log);
-                con.getStatement().executeUpdate(Tables.t_ticket);
-                con.getStatement().executeUpdate(Tables.t_user);
-                con.getStatement().executeUpdate(Tables.t_window);
-                con.getStatement().executeUpdate(Tables.t_window_status);
-                con.getStatement().executeUpdate(Tables.task_central);
-                con.getStatement().executeUpdate(Tables.ticket_task_cental);
-                con.getStatement().executeUpdate(Tables.rougga_zone);
-                con.getStatement().executeUpdate(Tables.rougga_agence_zone);
-                con.getStatement().executeUpdate(Tables.rougga_user_zone);
-                con.getStatement().executeUpdate(Tables.ROUGGA_GBL_TABLE);
+                con.getStatement().executeUpdate(QDataTables.ROUGGA_AGENCES);
+                con.getStatement().executeUpdate(QDataTables.ROUGGA_USERS);
+                con.getStatement().executeUpdate(QDataTables.ROUGGA_PARS);
+                con.getStatement().executeUpdate(QDataTables.ROUGGA_ZONES);
+                con.getStatement().executeUpdate(QDataTables.ROUGA_AGENCE_ZONE);
+                con.getStatement().executeUpdate(QDataTables.ROUGGA_USER_ZONE);
+                con.getStatement().executeUpdate(QDataTables.ROUGGA_GBL_TABLE);
+                con.getStatement().executeUpdate(QDataTables.ROUGGA_EMP_TABLE);
                 con.closeConnection();
                 response.sendRedirect("./QData.jsp");
             } catch (Exception e) {

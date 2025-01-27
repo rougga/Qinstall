@@ -15,7 +15,18 @@ public class Tables {
             + "    CONSTRAINT agence_pkey PRIMARY KEY (id)"
             + ")"
             + ";";
-
+    
+    static String ROUGGA_AGENCES = 
+    "CREATE TABLE public.rougga_agences (" +
+    "    id character varying(40) COLLATE pg_catalog.\"default\" NOT NULL, " +
+    "    name character varying(255) COLLATE pg_catalog.\"default\" NOT NULL, " +
+    "    host character varying(17) DEFAULT '127.0.0.1', " +
+    "    port int NOT NULL DEFAULT 8888, " +
+    "    lastupdated_at character varying(40), " +
+    "    status int NOT NULL DEFAULT 1, " +
+    "    CONSTRAINT rougga_agences_pkey PRIMARY KEY (id)" +
+    ");";
+    
     static String rougga_user = "CREATE TABLE public.rougga_user "
             + "("
             + "    id character varying(40)  NOT NULL,"
