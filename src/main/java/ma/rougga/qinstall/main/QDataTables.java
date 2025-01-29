@@ -67,10 +67,14 @@ public class QDataTables {
             + ");";
     public static final String ROUGGA_PARS
             = "CREATE TABLE public.rougga_pars ("
-            + "    id character varying(40) NOT NULL, "
             + "    name character varying(255) NOT NULL, "
             + "    value character varying(255) NOT NULL, "
-            + "    CONSTRAINT rougga_pars_pkey PRIMARY KEY (id)"
+            + "    CONSTRAINT rougga_pars_pkey PRIMARY KEY (name)"
+            + ");";
+    public static final String ROUGGA_TITLES = "CREATE TABLE rougga_titles ("
+            + "type VARCHAR(255) NOT NULL, "
+            + "title VARCHAR(255) NOT NULL, "
+            + "CONSTRAINT rougga_titles_pkey PRIMARY KEY (type)"
             + ");";
     public static final String ROUGGA_GBL_TABLE
             = "CREATE TABLE rougga_gbl_table ("

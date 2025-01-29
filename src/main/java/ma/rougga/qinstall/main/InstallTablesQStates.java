@@ -2,10 +2,12 @@ package ma.rougga.qinstall.main;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import ma.rougga.qinstall.controller.QstatesTablesController;
 
 public class InstallTablesQStates extends HttpServlet {
    
@@ -16,15 +18,10 @@ public class InstallTablesQStates extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = resp.getWriter()) {
             try {
-                PgConnection con = new PgConnection();
-                //instalation des tables
-                con.getStatement().executeUpdate(Tables.task);
-                con.getStatement().executeUpdate(Tables.ticket_task);
-                // closing the connection to database
-                con.closeConnection();
+                QstatesTablesController.createTables();
                 //redirecting to page
-                resp.sendRedirect("./QStates.jsp");
-            } catch (Exception e) {
+                resp.sendRedirect("./qstates.jsp");
+            } catch (IOException | ClassNotFoundException | SQLException e) {
                 out.print(e.getMessage());
             }
 

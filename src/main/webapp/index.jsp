@@ -37,7 +37,7 @@
                             Installation des tables pour les fonctions des taches.
                         </p>
                         <div class="d-flex justify-content-between">
-                            <a href="QStates.jsp" class="btn text-white font-weight-bold w-75 qstates-bg" >
+                            <a href="qstates.jsp" class="btn text-white font-weight-bold w-75 qstates-bg" >
                                 <i class="fa fa-download" aria-hidden="true"></i> INSTALLER
                             </a>
                             <a href="./doc/qstates.pdf" class="btn btn-secondary font-weight-bold " >

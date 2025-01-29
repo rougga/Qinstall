@@ -1,11 +1,12 @@
+<%@page import="ma.rougga.qinstall.main.QstatesTables"%>
 <%@page import="ma.rougga.qinstall.main.CfgHandler"%>
 <%@page import="ma.rougga.qinstall.main.PgConnection"%>
 <%@page import="java.sql.ResultSet"%>
 <%@page import="java.sql.DatabaseMetaData"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%
-    String prefix = "rougga_";
-    String[] tables = {"task", "ticket_task"};
+<%!
+    
+    String[] tables = QstatesTables.getTABLES();
     int allCreated = 1;
 
 %>
@@ -49,7 +50,7 @@
                             DatabaseMetaData md = con.getStatement().getConnection().getMetaData();
                             ResultSet rs;
                             for (String table : tables) {
-                                rs = md.getTables(null, null, prefix + table, null);
+                                rs = md.getTables(null, null, table, null);
                                 if (rs.next()) {
                     %>
                     <span class="d-flex justify-content-between align-items-center w-50 mx-auto">
