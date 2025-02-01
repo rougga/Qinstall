@@ -52,7 +52,10 @@ public class QstatesTables {
             + "    name character varying(255) NOT NULL, "
             + "    value character varying(255) NOT NULL, "
             + "    CONSTRAINT rougga_pars_pkey PRIMARY KEY (name)"
-            + ");";
+            + ");"
+            + "INSERT INTO rougga_pars (name, value) VALUES "
+            + "('goal_t', '100'), "
+            + "('max_a', '3');";
     public static final String ROUGGA_TITLES = "CREATE TABLE IF NOT EXISTS rougga_titles ("
             + "type VARCHAR(255) NOT NULL, "
             + "title VARCHAR(255) NOT NULL, "
