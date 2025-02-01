@@ -27,10 +27,16 @@ footer a, footer a:link {
 .qstates-bg{
     background-color: #b83dba;
 }
+.qstates-bg-nohover{
+    background-color: #b83dba;
+}
 .qstates-bg:hover{
     opacity: 0.7;
 }
 .qdata-bg{
+    background-color: #14b6fa;
+}
+.qdata-bg-nohover{
     background-color: #14b6fa;
 }
 .qdata-bg:hover{
@@ -39,6 +45,12 @@ footer a, footer a:link {
 .qdisplay-bg{
     background-color: blue;
 }
+.qdisplay-bg-nohover{
+    background-color: blue;
+}
 .qdisplay-bg:hover{
     opacity: 0.7;
+}
+.hover:hover{
+     opacity: 0.7;
 }

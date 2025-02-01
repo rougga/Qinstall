@@ -2,12 +2,13 @@ package ma.rougga.qinstall.main;
 
 public class QstatesTables {
 
-    private static String[] TABLES = {
+    private static final String[] TABLES = {
         "rougga_users",
         "rougga_tasks",
         "rougga_ticket_task",
         "rougga_pars",
-        "rougga_titles"
+        "rougga_titles",
+        "rougga_cibles"
     };
 
     public static String[] getTABLES() {
@@ -75,5 +76,12 @@ public class QstatesTables {
             + "('sgch', 'Supervision: Employée-Guichet'), "
             + "('ser', 'Supervision: Service'), "
             + "('tch', 'Rapport Tache');";
-
+    public static final String ROUGGA_CIBLES = "CREATE TABLE rougga_cibles ("
+            + "service_id VARCHAR(40), "
+            + "service_name VARCHAR(255) NOT NULL, "
+            + "cible_a BIGINT DEFAULT 0, "
+            + "cible_t BIGINT DEFAULT 0, "
+            + "cible_per DECIMAL(6, 3) DEFAULT 0.000, "
+            + "CONSTRAINT rougga_cibles_pkey PRIMARY KEY (service_id)"
+            + ");";
 }

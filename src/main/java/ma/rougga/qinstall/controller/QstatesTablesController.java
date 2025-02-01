@@ -10,17 +10,17 @@ public class QstatesTablesController {
 
     public QstatesTablesController() {
     }
-       
-    
-    public static void createTables() throws ClassNotFoundException, SQLException{
-            PgConnection con = new PgConnection();
-            //instalation des tables
-            con.getStatement().executeUpdate(QstatesTables.ROUGGA_USERS);
-            con.getStatement().executeUpdate(QstatesTables.ROUGGA_PARS);
-            con.getStatement().executeUpdate(QstatesTables.ROUGGA_TASKS);
-            con.getStatement().executeUpdate(QstatesTables.ROUGGA_TICKET_TASK);
-            con.getStatement().executeUpdate(QstatesTables.ROUGGA_TITLES);
-            // closing the connection to database
-            con.closeConnection();  
+
+    public static void createTables() throws ClassNotFoundException, SQLException {
+        PgConnection con = new PgConnection();
+        //instalation des tables
+        con.getStatement().executeUpdate(QstatesTables.ROUGGA_USERS);
+        con.getStatement().executeUpdate(QstatesTables.ROUGGA_PARS);
+        con.getStatement().executeUpdate(QstatesTables.ROUGGA_TASKS);
+        con.getStatement().executeUpdate(QstatesTables.ROUGGA_TICKET_TASK);
+        con.getStatement().executeUpdate(QstatesTables.ROUGGA_TITLES);
+        con.getStatement().executeUpdate(QstatesTables.ROUGGA_CIBLES);
+        // closing the connection to database
+        con.closeConnection();
     }
 }

@@ -5,7 +5,6 @@
 <%@page import="java.sql.DatabaseMetaData"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%!
-    
     String[] tables = QstatesTables.getTABLES();
     int allCreated = 1;
 
@@ -29,8 +28,9 @@
                     <img src="./img/rougga.png" class="img-fluid" width="100"/>
                 </a>
                 <h2 class="text-white text-center" >
-                    <a href="index.jsp" class="mr-4 rounded"><i class="fa fa-chevron-circle-left fa-lg text-danger" aria-hidden="true"></i></a>
-                    Installation de QData 
+                    <a href="index.jsp" class="mr-4 rounded hover"><i class="fa fa-chevron-circle-left fa-lg text-danger" aria-hidden="true"></i></a>
+                    Installation de 
+                    <span class="badge badge-pill qstates-bg-nohover ">QStates</span>
                 </h2>
             </div>
             <div class="mb-2 d-flex flex-column justify-content-between">
@@ -94,7 +94,7 @@
                         Deplacement des fichiers:
                     </h4>
                     <span class="d-flex justify-content-between align-items-center w-50 mx-auto">
-                        QStates.war v<%= CfgHandler.QDATA_VERSION%> copié.
+                        QStates.war v<%= CfgHandler.QSTATE_VERSION %> copié.
                         <i class="fa fa-check-circle-o text-success" aria-hidden="true"></i>
                     </span>
                     <span class="d-flex justify-content-between align-items-center w-50 mx-auto">
@@ -103,12 +103,12 @@
                     </span>
                 </div>
             </div>
-            <div class="row justify-content-center" >
+            <div class="row justify-content-center flex-column align-items-center mt-3" >
                 <%
                     if (allCreated == 0) {
                 %>
 
-                <a href="./InstallTablesQStates" class="btn btn-success">
+                <a href="./InstallTablesQStates" class="btn qstates-bg text-white">
                     <i class="fa fa-download" aria-hidden="true"></i>
                     INSTALLER
                 </a>
@@ -116,10 +116,15 @@
                     }
                     if (allCreated == 1) {
                 %>
-                <h2>
-                    <img src="img/icon/check-mark-8-24.png"/> 
-                    Toutes les tables sont installées.
+                <h2 class="mt-4">
+                    <span class="badge badge-pill badge-success ">Toutes les tables sont installées</span>
                 </h2>
+                <h6 class="">
+                    <a href="index.jsp" class="mr-4 rounded hover">
+                        <i class="fa fa-chevron-circle-left fa-lg text-danger" aria-hidden="true"></i>
+                        <span class="badge badge-pill badge-danger ">RETOUR À LA PAGE D'ACCUEIL</span>
+                    </a>
+                </h6>
                 <%
                     }
 

@@ -41,8 +41,9 @@
                     <img src="./img/rougga.png" class="img-fluid" width="100"/>
                 </a>
                 <h2 class="text-white text-center" >
-                    <a href="index.jsp" class="mr-4 rounded"><i class="fa fa-chevron-circle-left fa-lg text-danger" aria-hidden="true"></i></a>
-                    Installation de QData 
+                    <a href="index.jsp" class="mr-4 rounded hover"><i class="fa fa-chevron-circle-left fa-lg text-danger" aria-hidden="true"></i></a>
+                    Installation de 
+                    <span class="badge badge-pill qdata-bg-nohover" >QData</span> 
                 </h2>
             </div>
 
@@ -123,18 +124,23 @@
                     if (allCreated==0) {
                 %>
                 
-                <a href="./InstallTablesQData" class="btn btn-success">
-                    <i class="fa fa-download" aria-hidden="true"></i>
+                <a href="./InstallTablesQData" class="btn qdata-bg text-white font-weight-bold">
+                    <i class="fa fa-download " aria-hidden="true"></i>
                     INSTALLER
                 </a>
                 <%
                 } 
                     if(allCreated==1) {
                 %>
-                <h2>
-                    <img src="img/icon/check-mark-8-24.png"/> 
-                    Toutes les tables sont installées.
+                <h2 class="mt-4">
+                    <span class="badge badge-pill badge-success ">Toutes les tables sont installées</span>
                 </h2>
+                <h6 class="">
+                    <a href="index.jsp" class="mr-4 rounded hover">
+                        <i class="fa fa-chevron-circle-left fa-lg text-danger" aria-hidden="true"></i>
+                        <span class="badge badge-pill badge-danger ">RETOUR À LA PAGE D'ACCUEIL</span>
+                    </a>
+                </h6>
                     <%
                         }
 
