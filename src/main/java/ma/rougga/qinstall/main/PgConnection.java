@@ -9,7 +9,7 @@ import java.sql.SQLException;
 public class PgConnection {
 
     private final String DRIVER = "org.postgresql.Driver";
-    private final String CONNECTIONSTRING = "jdbc:postgresql://localhost:5433/postgres";
+    private final String CONNECTIONSTRING = "jdbc:postgresql://localhost:5432/postgres";
     // private final String CONNECTIONSTRING = "jdbc:postgresql://localhost:5434/postgres";
     private final String USER = "honyi";
     private final String PASSWORD = "honyi123";

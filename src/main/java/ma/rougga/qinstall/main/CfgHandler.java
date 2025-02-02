@@ -29,7 +29,8 @@ public class CfgHandler {
         "rougga_agence_zone",
         "rougga_user",
         "rougga_user_zone", 
-        "rougga_gbl_table"
+        "rougga_gbl_table",
+        "rougga_cibles"
     };
                     
 }

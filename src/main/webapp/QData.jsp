@@ -12,6 +12,7 @@
         "rougga_user_zone",
         "rougga_pars",
         "rougga_titles",
+        "rougga_cibles",
         "rougga_gbl_table",
         "rougga_emp_table",
         "rougga_empser_table",
