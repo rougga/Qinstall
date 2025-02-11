@@ -120,7 +120,7 @@
                 </div>
             </div>
 
-            <div class="row justify-content-center" >
+            <div class="d-flex justify-content-center flex-column align-items-center" >
                 <%
                     if (allCreated==0) {
                 %>

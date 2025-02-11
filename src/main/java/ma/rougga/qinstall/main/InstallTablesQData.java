@@ -49,6 +49,10 @@ public class InstallTablesQData extends HttpServlet {
                 con.createStatement().executeUpdate(QDataTables.ROUGGA_GCHSER_TABLE);
                 con.createStatement().executeUpdate(QDataTables.ROUGGA_GLA_TABLE);
                 con.createStatement().executeUpdate(QDataTables.ROUGGA_GLT_TABLE);
+                con.createStatement().executeUpdate(QDataTables.ROUGGA_THT_TABLE);
+                con.createStatement().executeUpdate(QDataTables.ROUGGA_THTT_TABLE);
+                con.createStatement().executeUpdate(QDataTables.ROUGGA_THA_TABLE);
+                con.createStatement().executeUpdate(QDataTables.ROUGGA_THSA_TABLE);
                 con.close();
                 response.sendRedirect("./QData.jsp");
             } catch (Exception e) {
