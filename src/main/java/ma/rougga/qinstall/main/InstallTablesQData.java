@@ -33,26 +33,101 @@ public class InstallTablesQData extends HttpServlet {
                     }
 
                 }
-
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_AGENCES);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_USERS);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_PARS);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_TITLES);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_CIBLES);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_ZONES);
-                con.createStatement().executeUpdate(QDataTables.ROUGA_AGENCE_ZONE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_USER_ZONE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_GBL_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_EMP_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_EMPSER_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_GCH_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_GCHSER_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_GLA_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_GLT_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_THT_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_THTT_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_THA_TABLE);
-                con.createStatement().executeUpdate(QDataTables.ROUGGA_THSA_TABLE);
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_AGENCES);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_USERS);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_PARS);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_TITLES);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_CIBLES);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_ZONES);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGA_AGENCE_ZONE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_USER_ZONE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_GBL_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_EMP_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_EMPSER_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_GCH_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_GCHSER_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_GLA_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_GLT_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_THT_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_THTT_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_THA_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_THSA_TABLE);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
                 con.close();
                 response.sendRedirect("./QData.jsp");
             } catch (Exception e) {

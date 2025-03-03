@@ -3,7 +3,7 @@ package ma.rougga.qinstall.main;
 public class QDataTables {
 
     public static final String ROUGGA_AGENCES
-            = "CREATE TABLE public.rougga_agences ("
+            = "CREATE TABLE IF NOT EXISTS public.rougga_agences ("
             + "    id character varying(40) COLLATE pg_catalog.\"default\" NOT NULL, "
             + "    name character varying(255) COLLATE pg_catalog.\"default\" NOT NULL, "
             + "    host character varying(17) DEFAULT '127.0.0.1', "
@@ -12,7 +12,7 @@ public class QDataTables {
             + "    status int NOT NULL DEFAULT 1, "
             + "    CONSTRAINT rougga_agences_pkey PRIMARY KEY (id)"
             + ");";
-    public static final String ROUGGA_USERS = "CREATE TABLE public.rougga_users "
+    public static final String ROUGGA_USERS = "CREATE TABLE IF NOT EXISTS public.rougga_users "
             + "("
             + "    id character varying(40)  NOT NULL,"
             + "    username character varying(255) NOT NULL unique,"
@@ -31,7 +31,7 @@ public class QDataTables {
             + "'$31$16$3HyoGMKLc4EvcO0ljwLKNY8pclDUAmd7o_oAQUA7J20',"
             + "'adm','admin','admin');";
 
-    public static final String ROUGGA_TASKS = "CREATE TABLE rougga_tasks "
+    public static final String ROUGGA_TASKS = "CREATE TABLE IF NOT EXISTS rougga_tasks "
             + "("
             + "id character varying(40),"
             + "name character varying(255) not null,"
@@ -39,14 +39,14 @@ public class QDataTables {
             + "id_agence character varying(40) not null references rougga_agences(id) ON DELETE CASCADE"
             + ");";
 
-    public static final String ROUGGA_TICKET_TASK = "CREATE TABLE rougga_ticket_task"
+    public static final String ROUGGA_TICKET_TASK = "CREATE TABLE IF NOT EXISTS rougga_ticket_task"
             + "("
             + "id_ticket character varying(32) ,"
             + "id_task  character varying(40) ,"
             + "quantity numeric(5,0) default 1,"
             + "id_agence character varying(40) not null references rougga_agences(id) ON DELETE CASCADE"
             + ");";
-    public static final String ROUGGA_ZONES = "CREATE TABLE public.rougga_zones "
+    public static final String ROUGGA_ZONES = "CREATE TABLE IF NOT EXISTS public.rougga_zones "
             + "("
             + "    id character varying(40) COLLATE pg_catalog.\"default\" NOT NULL,"
             + "    name character varying(40) COLLATE pg_catalog.\"default\" NOT NULL,"
@@ -55,18 +55,18 @@ public class QDataTables {
             + "    CONSTRAINT zones_pkey PRIMARY KEY (id)"
             + ")"
             + ";";
-    public static final String ROUGA_AGENCE_ZONE = "CREATE TABLE rougga_agence_zone"
+    public static final String ROUGA_AGENCE_ZONE = "CREATE TABLE IF NOT EXISTS rougga_agence_zone"
             + "("
             + "id_agence character varying(40) not null references rougga_agences(id) ON DELETE CASCADE,"
             + "id_zone  character varying(40) not null references rougga_zones(id) ON DELETE CASCADE "
             + ");";
-    public static final String ROUGGA_USER_ZONE = "CREATE TABLE rougga_user_zone"
+    public static final String ROUGGA_USER_ZONE = "CREATE TABLE IF NOT EXISTS rougga_user_zone"
             + "("
             + "id_user character varying(40) not null references rougga_users(id) ON DELETE CASCADE,"
             + "id_zone  character varying(40) not null references rougga_zoneS(id) ON DELETE CASCADE "
             + ");";
     public static final String ROUGGA_PARS
-            = "CREATE TABLE public.rougga_pars ("
+            = "CREATE TABLE IF NOT EXISTS public.rougga_pars ("
             + "    name character varying(255) NOT NULL, "
             + "    value character varying(255) NOT NULL, "
             + "    CONSTRAINT rougga_pars_pkey PRIMARY KEY (name)"
@@ -94,7 +94,7 @@ public class QDataTables {
             + "('sgch', 'Supervision: Employée-Guichet'), "
             + "('ser', 'Supervision: Service'), "
             + "('tch', 'Rapport Tache');";
-    public static final String ROUGGA_CIBLES = "CREATE TABLE rougga_cibles ("
+    public static final String ROUGGA_CIBLES = "CREATE TABLE IF NOT EXISTS rougga_cibles ("
             + "service_id VARCHAR(40), "
             + "service_name VARCHAR(255) NOT NULL, "
             + "cible_a BIGINT DEFAULT 0, "
@@ -104,7 +104,7 @@ public class QDataTables {
             + "CONSTRAINT rougga_cibles_pkey PRIMARY KEY (service_id,agence_id)"
             + ");";
     public static final String ROUGGA_GBL_TABLE
-            = "CREATE TABLE rougga_gbl_table ("
+            = "CREATE TABLE IF NOT EXISTS rougga_gbl_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "id_service VARCHAR(255) NOT NULL, "
             + "service_name VARCHAR(255) NOT NULL, "
@@ -128,7 +128,7 @@ public class QDataTables {
             + "CREATE INDEX idx_gbl_table_id_service ON rougga_gbl_table(id_service);"
             + "CREATE INDEX idx_gbl_table_id_agence ON rougga_gbl_table(id_agence);"
             + "CREATE INDEX idx_gbl_table_date ON rougga_gbl_table(date);";
-    public static final String ROUGGA_EMP_TABLE = "CREATE TABLE rougga_emp_table ("
+    public static final String ROUGGA_EMP_TABLE = "CREATE TABLE  IF NOT EXISTS rougga_emp_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "id_emp VARCHAR(255) NOT NULL, "
             + "emp_name VARCHAR(255) NOT NULL, "
@@ -152,7 +152,7 @@ public class QDataTables {
             + "CREATE INDEX idx_emp_table_id_emp ON rougga_emp_table(id_emp);"
             + "CREATE INDEX idx_emp_table_id_agence ON rougga_emp_table(id_agence);"
             + "CREATE INDEX idx_emp_table_date ON rougga_emp_table(date);";
-    public static final String ROUGGA_EMPSER_TABLE = "CREATE TABLE rougga_empser_table ("
+    public static final String ROUGGA_EMPSER_TABLE = "CREATE TABLE IF NOT EXISTS rougga_empser_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "id_emp VARCHAR(255) NOT NULL, "
             + "emp_name VARCHAR(255) NOT NULL, "
@@ -179,7 +179,7 @@ public class QDataTables {
             + "CREATE INDEX idx_empser_id_agence ON rougga_empser_table(agence_id);"
             + "CREATE INDEX idx_empser_id_service ON rougga_empser_table(service_id);"
             + "CREATE INDEX idx_empser_date ON rougga_empser_table(date);";
-    public static final String ROUGGA_GCH_TABLE = "CREATE TABLE rougga_gch_table ("
+    public static final String ROUGGA_GCH_TABLE = "CREATE TABLE IF NOT EXISTS rougga_gch_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "agence_id VARCHAR(40) NOT NULL REFERENCES rougga_agences(id) ON DELETE CASCADE, "
             + "guichet_id VARCHAR(255) NOT NULL, "
@@ -203,7 +203,7 @@ public class QDataTables {
             + "CREATE INDEX idx_gch_id_agence ON rougga_gch_table(agence_id);"
             + "CREATE INDEX idx_gch_guichet_id ON rougga_gch_table(guichet_id);"
             + "CREATE INDEX idx_gch_date ON rougga_gch_table(date);";
-    public static final String ROUGGA_GCHSER_TABLE = "CREATE TABLE rougga_gchser_table ("
+    public static final String ROUGGA_GCHSER_TABLE = "CREATE TABLE IF NOT EXISTS rougga_gchser_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "date TIMESTAMP DEFAULT NOW(), "
             + "agence_id VARCHAR(40) NOT NULL REFERENCES rougga_agences(id) ON DELETE CASCADE, "
@@ -230,7 +230,7 @@ public class QDataTables {
             + "CREATE INDEX idx_gchser_service_id ON rougga_gchser_table(service_id);"
             + "CREATE INDEX idx_gchser_guichet_id ON rougga_gchser_table(guichet_id);"
             + "CREATE INDEX idx_gchser_date ON rougga_gchser_table(date);";
-    public static final String ROUGGA_GLA_TABLE = "CREATE TABLE rougga_gla_table ("
+    public static final String ROUGGA_GLA_TABLE = "CREATE TABLE IF NOT EXISTS rougga_gla_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "date TIMESTAMP DEFAULT NOW(), "
             + "agence_id VARCHAR(40) NOT NULL REFERENCES rougga_agences(id) ON DELETE CASCADE, "
@@ -254,7 +254,7 @@ public class QDataTables {
             + "CREATE INDEX idx_gla_id_agence ON rougga_gla_table(agence_id);"
             + "CREATE INDEX idx_gla_service_id ON rougga_gla_table(service_id);"
             + "CREATE INDEX idx_gla_date ON rougga_gla_table(date);";
-    public static final String ROUGGA_GLT_TABLE = "CREATE TABLE rougga_glt_table ("
+    public static final String ROUGGA_GLT_TABLE = "CREATE TABLE IF NOT EXISTS rougga_glt_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "date TIMESTAMP DEFAULT NOW(), "
             + "agence_id VARCHAR(40) NOT NULL REFERENCES rougga_agences(id) ON DELETE CASCADE, "
@@ -278,7 +278,7 @@ public class QDataTables {
             + "CREATE INDEX idx_glt_id_agence ON rougga_glt_table(agence_id);"
             + "CREATE INDEX idx_glt_service_id ON rougga_glt_table(service_id);"
             + "CREATE INDEX idx_glt_date ON rougga_glt_table(date);";
-    public static final String ROUGGA_THT_TABLE = "CREATE TABLE rougga_tht_table ("
+    public static final String ROUGGA_THT_TABLE = "CREATE TABLE IF NOT EXISTS rougga_tht_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "date TIMESTAMP DEFAULT NOW(), "
             + "agence_id VARCHAR(40) NOT NULL REFERENCES rougga_agences(id) ON DELETE CASCADE, "
@@ -313,7 +313,7 @@ public class QDataTables {
             + "CREATE INDEX idx_tht_id_agence ON rougga_tht_table(agence_id);"
             + "CREATE INDEX idx_tht_service_id ON rougga_tht_table(service_id);"
             + "CREATE INDEX idx_tht_date ON rougga_tht_table(date);";
-    public static final String ROUGGA_THTT_TABLE = "CREATE TABLE rougga_thtt_table ("
+    public static final String ROUGGA_THTT_TABLE = "CREATE TABLE IF NOT EXISTS rougga_thtt_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "date TIMESTAMP DEFAULT NOW(), "
             + "agence_id VARCHAR(40) NOT NULL REFERENCES rougga_agences(id) ON DELETE CASCADE, "
@@ -348,7 +348,7 @@ public class QDataTables {
             + "CREATE INDEX idx_thtt_id_agence ON rougga_thtt_table(agence_id);"
             + "CREATE INDEX idx_thtt_service_id ON rougga_thtt_table(service_id);"
             + "CREATE INDEX idx_thtt_date ON rougga_thtt_table(date);";
-    public static final String ROUGGA_THA_TABLE = "CREATE TABLE rougga_tha_table ("
+    public static final String ROUGGA_THA_TABLE = "CREATE TABLE IF NOT EXISTS rougga_tha_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "date TIMESTAMP DEFAULT NOW(), "
             + "agence_id VARCHAR(40) NOT NULL REFERENCES rougga_agences(id) ON DELETE CASCADE, "
@@ -383,7 +383,7 @@ public class QDataTables {
             + "CREATE INDEX idx_tha_id_agence ON rougga_tha_table(agence_id);"
             + "CREATE INDEX idx_tha_service_id ON rougga_tha_table(service_id);"
             + "CREATE INDEX idx_tha_date ON rougga_tha_table(date);";
-    public static final String ROUGGA_THSA_TABLE = "CREATE TABLE rougga_thsa_table ("
+    public static final String ROUGGA_THSA_TABLE = "CREATE TABLE IF NOT EXISTS rougga_thsa_table ("
             + "id VARCHAR(255) PRIMARY KEY, "
             + "date TIMESTAMP DEFAULT NOW(), "
             + "agence_id VARCHAR(40) NOT NULL REFERENCES rougga_agences(id) ON DELETE CASCADE, "

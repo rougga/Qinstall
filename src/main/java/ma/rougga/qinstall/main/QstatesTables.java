@@ -79,7 +79,7 @@ public class QstatesTables {
             + "('sgch', 'Supervision: Employée-Guichet'), "
             + "('ser', 'Supervision: Service'), "
             + "('tch', 'Rapport Tache');";
-    public static final String ROUGGA_CIBLES = "CREATE TABLE rougga_cibles ("
+    public static final String ROUGGA_CIBLES = "CREATE TABLE IF NOT EXISTS rougga_cibles ("
             + "service_id VARCHAR(40), "
             + "service_name VARCHAR(255) NOT NULL, "
             + "cible_a BIGINT DEFAULT 0, "
