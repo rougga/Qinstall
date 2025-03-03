@@ -1,8 +1,6 @@
 package ma.rougga.qinstall.controller;
 
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import ma.rougga.qinstall.main.PgConnection;
 import ma.rougga.qinstall.main.QstatesTables;
 

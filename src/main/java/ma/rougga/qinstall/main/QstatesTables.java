@@ -4,7 +4,7 @@ public class QstatesTables {
 
     private static final String[] TABLES = {
         "rougga_users",
-        "rougga_tasks",
+        "rougga_task",
         "rougga_ticket_task",
         "rougga_pars",
         "rougga_titles",
@@ -34,7 +34,7 @@ public class QstatesTables {
             + "'$31$16$3HyoGMKLc4EvcO0ljwLKNY8pclDUAmd7o_oAQUA7J20',"
             + "'adm','admin','admin');";
 
-    public static final String ROUGGA_TASKS = "CREATE TABLE IF NOT EXISTS rougga_tasks "
+    public static final String ROUGGA_TASKS = "CREATE TABLE IF NOT EXISTS rougga_task "
             + "("
             + "id character varying(40),"
             + "name character varying(255) not null,"
