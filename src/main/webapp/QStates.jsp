@@ -35,7 +35,7 @@
             </div>
             <div class="mb-2 d-flex flex-column justify-content-between">
                 <h6 class="text-white text-center" >
-                    <%= getServletContext().getRealPath("/").replace("\\qinstall", "")%>
+                    <%= getServletContext().getRealPath("/").replace("\\QInstall", "")%>
                 </h6>
             </div>
             <div class="row  justify-content-center">

@@ -128,6 +128,11 @@ public class InstallTablesQData extends HttpServlet {
                 } catch (Exception e) {
                     logger.error(e.getMessage());
                 }
+                try {
+                    con.createStatement().executeUpdate(QDataTables.ROUGGA_PARS_QDISPLAY);
+                } catch (Exception e) {
+                    logger.error(e.getMessage());
+                }
                 con.close();
                 response.sendRedirect("./QData.jsp");
             } catch (Exception e) {

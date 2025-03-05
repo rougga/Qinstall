@@ -11,6 +11,7 @@
         "rougga_agence_zone",
         "rougga_user_zone",
         "rougga_pars",
+        "rougga_pars_qdisplay",
         "rougga_titles",
         "rougga_cibles",
         "rougga_gbl_table",
@@ -50,7 +51,7 @@
 
             <div class="mb-2 d-flex flex-column justify-content-between">
                 <h6 class="text-white text-center" >
-                    <%= getServletContext().getRealPath("/").replace("\\qinstall", "") %>
+                    <%= getServletContext().getRealPath("/").replace("\\QInstall", "") %>
                 </h6>
             </div>
             

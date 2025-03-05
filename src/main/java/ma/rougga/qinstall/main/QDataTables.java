@@ -418,5 +418,22 @@ public class QDataTables {
             + "CREATE INDEX idx_thsa_id_agence ON rougga_thsa_table(agence_id);"
             + "CREATE INDEX idx_thsa_service_id ON rougga_thsa_table(service_id);"
             + "CREATE INDEX idx_thsa_date ON rougga_thsa_table(date);";
-
+    public static final String ROUGGA_PARS_QDISPLAY
+            = "CREATE TABLE IF NOT EXISTS public.rougga_pars_qdisplay ("
+            + "    name character varying(255) NOT NULL, "
+            + "    value character varying(255) NOT NULL, "
+            + "    CONSTRAINT rougga_pars_pkey PRIMARY KEY (name)"
+            + ");"
+            + "INSERT INTO rougga_pars_qdisplay (name, value) VALUES "
+            + "('theme','normal'),"
+            + "('hideEmptyTables','false'),"
+            + "('isWeatherEnabled','true'),"
+            + "('location','Casablanca,Morocco'),"
+            + "('margin','false'),"
+            + "('size','20'),"
+            + "('tableRefreshTime','30'),"
+            + "('text','Bonjour'),"
+            + "('textColor','#ffffff'),"
+            + "('titleSize','36')"
+            + "";
 }
